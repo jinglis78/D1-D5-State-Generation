@@ -1,0 +1,135 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3896,        127]
+NotebookOptionsPosition[      3539,        113]
+NotebookOutlinePosition[      3939,        129]
+CellTagsIndexPosition[      3896,        126]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "alpha", "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SetAttributes", "[", 
+    RowBox[{"alpha", ",", 
+     RowBox[{"{", "Protected", "}"}]}], "]"}], ";"}], "\n", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Define", " ", "non"}], "-", 
+    RowBox[{"commutative", " ", "multiplication"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"commRules", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"alpha", "[", "m_", "]"}], "**", 
+       RowBox[{"alpha", "[", "n_", "]"}]}], ":>", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"alpha", "[", "n", "]"}], "**", 
+        RowBox[{"alpha", "[", "m", "]"}]}], "+", 
+       RowBox[{"m", "*", 
+        RowBox[{"KroneckerDelta", "[", 
+         RowBox[{
+          RowBox[{"m", "+", "n"}], ",", "0"}], "]"}]}]}]}], "}"}]}], ";"}], 
+  "\n", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Example", ":", 
+    RowBox[{"compute", "[", 
+     RowBox[{"\[Alpha]_m", ",", "\[Alpha]_n"}], "]"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"commutator", "[", 
+    RowBox[{"op1_", ",", "op2_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"op1", "**", "op2"}], "-", 
+    RowBox[{"op2", "**", "op1"}]}]}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"commutator", "[", 
+    RowBox[{
+     RowBox[{"alpha", "[", "3", "]"}], ",", 
+     RowBox[{"alpha", "[", 
+      RowBox[{"-", "3"}], "]"}]}], "]"}], "//.", "commRules"}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{"ClearAll", "[", "psi", "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SetAttributes", "[", 
+    RowBox[{"psi", ",", 
+     RowBox[{"{", "Protected", "}"}]}], "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"anticommRules", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"psi", "[", "r_", "]"}], "**", 
+       RowBox[{"psi", "[", "s_", "]"}]}], ":>", 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{
+         RowBox[{"psi", "[", "s", "]"}], "**", 
+         RowBox[{"psi", "[", "r", "]"}]}]}], "+", 
+       RowBox[{"KroneckerDelta", "[", 
+        RowBox[{
+         RowBox[{"r", "+", "s"}], ",", "0"}], "]"}]}]}], "}"}]}], ";"}], "\n",
+   "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Define", " ", "anticommutator"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"anticommutator", "[", 
+    RowBox[{"op1_", ",", "op2_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"op1", "**", "op2"}], "+", 
+    RowBox[{"op2", "**", "op1"}]}]}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"anticommutator", "[", 
+   RowBox[{
+    RowBox[{"psi", "[", 
+     RowBox[{"1", "/", "2"}], "]"}], ",", 
+    RowBox[{"psi", "[", 
+     RowBox[{
+      RowBox[{"-", "1"}], "/", "2"}], "]"}]}], "]"}], "//.", 
+  "anticommutRules"}], "\n"}], "Input",
+ CellChangeTimes->{{3.9690131899718227`*^9, 
+  3.9690132191819963`*^9}},ExpressionUUID->"667eb374-7c61-4c65-b607-\
+6e4f7fead892"]
+},
+WindowSize->{808, 696},
+WindowMargins->{{Automatic, -1091}, {18, Automatic}},
+FrontEndVersion->"14.2 for Mac OS X ARM (64-bit) (December 26, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"daee1635-c6c1-439b-9b40-c6cf914c333d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 2981, 91, 437, "Input",ExpressionUUID->"667eb374-7c61-4c65-b607-6e4f7fead892"]
+}
+]
+*)
+
